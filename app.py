@@ -32,8 +32,11 @@ contract = load_contract()
 ################################################################################
 # Streamlit Front End
 ##################################################################################
-
-st.title("REGISTER FOR A CERTIFICATE OF LIFETIME MEMBERSHIP TO EZ AS PY NEWS SERVICES")
+col1,col2,col3 = st.columns([3,5,1])
+with st.sidebar:
+    st.title("REGISTER FOR A CERTIFICATE OF LIFETIME MEMBERSHIP TO EZ AS PY NEWS SERVICES")
+with col2: 
+    st.markdown("# Ez As Py News")
 title_image = Image.open("news_background.jpg")
 st.write("")
 st.image(title_image, width=700)
@@ -41,10 +44,11 @@ st.title("Membership for Ez As Py News services costs 1.00 Ether")
 st.markdown("---")
 
 accounts = w3.eth.accounts
+# with st.sidebar:
 address = st.selectbox("Select account for membership", options=accounts)
 
 
-################################################################################
+#################################################################################
 # Buying a Token
 ##################################################################################
 if st.button("Purchase a Certificate of Membership Token"):
@@ -59,7 +63,7 @@ if st.button("Purchase a Certificate of Membership Token"):
     st.write(dict(receipt))
     st.write(contract.functions.getRecentTokenURI().call())
 
-st.markdown("---")
+    st.markdown("---")
 
 ################################################################################
 # # Display a Token
@@ -84,3 +88,11 @@ if st.button("Display"):
     st.image(get_nft_image(token_uri))
 
     st.markdown("---")
+
+    with open("membership_cert.png", "rb") as file:
+        btn = st.download_button(
+            label = "Download Your Certificate of Membership",
+            data=file,
+            file_name="Certificate.png",
+            mime="image/png"
+        )
