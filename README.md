@@ -1,6 +1,6 @@
 # Project Title: Ez As Py News
 
-This blockchain application allows users to complete a membership transaction via a smart contract. Once a successful transaction has occurred, the user will be able to download a certificate of membership token. The user will then be allowed to view news articles in the following topics: Technology, World News, National News, and Business.
+This Streamlit application allows users to complete a membership transaction via a smart contract. Once a successful transaction has occurred, the user will be able to download a certificate of membership token. The user will then be allowed to view news articles in the following topics: Technology, World News, National News, and Business.
 
 The process of the application is detailed below:
 
@@ -14,8 +14,6 @@ The process of the application is detailed below:
 ![image](https://user-images.githubusercontent.com/34729547/206070227-cb36bf96-910f-40b6-9670-285b23a252ce.png)
 
 3. Select account for certificate
-
-
 4. Choose artwork token and click 'Display'
 ![image](https://user-images.githubusercontent.com/34729547/206070296-d60828a0-8ef5-4f17-b9f0-9e89615b78a2.png)
 
