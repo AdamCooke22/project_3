@@ -44,14 +44,14 @@ st.title("Membership for Ez As Py News services costs 1.00 Ether")
 st.markdown("---")
 
 accounts = w3.eth.accounts
-# with st.sidebar:
-address = st.selectbox("Select account for membership", options=accounts)
+#with st.sidebar:
+address = st.sidebar.selectbox("Select account for membership", options=accounts)
 
 
 #################################################################################
 # Buying a Token
 ##################################################################################
-if st.button("Purchase a Certificate of Membership Token"):
+if st.sidebar.button("Purchase a Certificate of Membership Token"):
     tx_hash = contract.functions.awardItem(address, nft_meta_json).transact({
         "from": address,
         "gas": 1000000,
@@ -61,25 +61,23 @@ if st.button("Purchase a Certificate of Membership Token"):
     receipt = w3.eth.waitForTransactionReceipt(tx_hash)
     st.write("Transaction receipt mined:")
     st.write(dict(receipt))
-    st.write(contract.functions.getRecentTokenURI().call())
-
     st.markdown("---")
 
 ################################################################################
 # # Display a Token
 # ################################################################################
-st.markdown("## Display Certificate")
-selected_address = st.selectbox("Select Account", options=accounts)
+st.sidebar.markdown("## Display Certificate")
+selected_address = st.sidebar.selectbox("Select Account", options=accounts)
 tokens = contract.functions.balanceOf(selected_address).call()
-st.write(f"This address owns {tokens} tokens")
-token_id = st.selectbox("Artwork Tokens", list(range(tokens)))
+st.sidebar.write(f"This address owns {tokens} tokens")
+token_id = st.sidebar.selectbox("Artwork Tokens", list(range(tokens)))
 
-if st.button("Display"):
+if st.sidebar.button("Display"):
 
     # Use the contract's `ownerOf` function to get the art token owner
     owner = contract.functions.ownerOf(token_id).call()
 
-    st.write(f"The token is registered to {owner}")
+    st.sidebar.write(f"The token is registered to {owner}")
 
     # Use the contract's `tokenURI` function to get the art token's URI
     token_uri = contract.functions.tokenURI(token_id).call()
@@ -90,7 +88,7 @@ if st.button("Display"):
     st.markdown("---")
 
     with open("membership_cert.png", "rb") as file:
-        btn = st.download_button(
+        btn = st.sidebar.download_button(
             label = "Download Your Certificate of Membership",
             data=file,
             file_name="Certificate.png",
