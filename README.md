@@ -14,10 +14,13 @@ The process of the application is detailed below:
 ![image](https://user-images.githubusercontent.com/34729547/206070227-cb36bf96-910f-40b6-9670-285b23a252ce.png)
 
 3. Select account for certificate
+
+
 4. Choose artwork token and click 'Display'
 ![image](https://user-images.githubusercontent.com/34729547/206070296-d60828a0-8ef5-4f17-b9f0-9e89615b78a2.png)
 
 5. Gain access to news articles
+
 ![image](https://user-images.githubusercontent.com/34729547/206070360-cbfb44fa-1edc-4d4d-913a-50909609956f.png)
 
 ---
@@ -43,10 +46,12 @@ GNews API for articles.
 Ensure the proper libraries and dependencies have been imported:
 
 app.py:
+
 ![image](https://user-images.githubusercontent.com/34729547/206069438-bcf43dc0-2939-482c-b1db-731f34b832ae.png)
 
 
 db.py:
+
 ![image](https://user-images.githubusercontent.com/34729547/206069539-c70ff426-e0c1-4ce1-9f15-da6c1ab452e0.png)
 
 
@@ -55,7 +60,9 @@ db.py:
 ## Contributors: Adam Cooke, Isaiah Robinson, Nia Robinson
 
 Adam Cooke: https://github.com/AdamCooke22
+
 Isaiah Robinson: https://www.linkedin.com/in/isaiah-robinson-275399178/
+
 Nia Robinson: https://www.linkedin.com/in/niaelanrobinson/
 
 ---
